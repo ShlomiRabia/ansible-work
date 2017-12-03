@@ -38,7 +38,8 @@ git init
 
 
 
-
+#install on all mysrv in ansible
+ansible mysrv -become -m package -a "name=wget state=installed"
 
 
 
