@@ -1,0 +1,18 @@
+
+- hosts: mysrv
+  become: true
+  tasks:
+    - name: install wget
+      yum: pkg=wget state=latest
+
+    - name: install nano editor
+      yum: pkg=nano state=latest
+
+    - name: Create file with list all root dir
+      shell: ls / -ls > list1.txt
+
+    - name: Create file with list all files in etc folder
+      shell: ls /etc -ls > etc_list_file.txt
+
+
+
