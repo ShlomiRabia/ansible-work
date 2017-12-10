@@ -1,0 +1,12 @@
+---
+ - hosts: mysrv
+   become: true
+   tasks:
+     - name: Install by Prompt
+       pause: prompt="What install now?"
+       register: The_package
+
+     - debug: msg="p is {{ The_package }}"
+       
+     - yum: pkg="{{ The_package.user_input }}" state=latest
+
