@@ -1,0 +1,6 @@
+---
+ - hosts: mysrv
+   roles:
+      - common
+      - webservers
+
