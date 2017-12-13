@@ -16,7 +16,7 @@
       yum: name=mariadb state=removed
       when: ansible_os_family == "RedHat"
 
-    - name: install Mysql package
+    - name: Uninstall Mysql package
       apt: name=mysql-server state=removed
       when: ansible_os_family == "Debian"
 
