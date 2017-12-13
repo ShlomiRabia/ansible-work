@@ -1,0 +1,36 @@
+---
+- hosts: mysrv
+  become: true
+  tasks:
+    - name: install mariadb  package
+      yum: name=mariadb state=latest
+      when: ansible_os_family == "RedHat"
+
+    - name: install Mysql package
+      apt: name=mysql-server state=latest
+      when: ansible_os_family == "Debian"
+
+
+
+    - name: Uninstall mariadb  package
+      yum: name=mariadb state=removed
+      when: ansible_os_family == "RedHat"
+
+    - name: install Mysql package
+      apt: name=mysql-server state=removed
+      when: ansible_os_family == "Debian"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
