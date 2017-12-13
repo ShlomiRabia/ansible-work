@@ -1,0 +1,8 @@
+---
+- hosts: s1
+  become: true
+
+  tasks:
+       - name: write motd file in etc Dir 
+         template: src=motd.j2 dest=/etc/motd
+
